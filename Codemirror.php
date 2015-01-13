@@ -12,6 +12,7 @@ use Yii;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\web\JsExpression;
+use yii\web\View;
 use yii\widgets\InputWidget;
 
 
@@ -19,7 +20,7 @@ use yii\widgets\InputWidget;
  * Requires Codemirror JavaScript component version 10.0.*
  */
 
-class CodemirrorWidget extends InputWidget
+class Codemirror extends InputWidget
 {
     /**
      * @var array Codemirror settings
@@ -47,13 +48,11 @@ class CodemirrorWidget extends InputWidget
 
         $bundle = CodemirrorAsset::register($view);
 
-        //TODO
-
-        $id            = $this->options['id'];
         $clientOptions = Json::encode($this->clientOptions);
-        //TODO
-        $js            = '';
-        $view->registerJs($js);
+
+        $js = 'var editor = CodeMirror.fromTextArea(document.getElementById(\''. $this->options['id'] .'\'), ' . $clientOptions . ');';
+
+        $view->registerJs($js, View::POS_END);
     }
 
     /**

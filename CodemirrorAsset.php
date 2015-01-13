@@ -22,10 +22,20 @@ class CodemirrorAsset extends AssetBundle
 
     public $js = [
         'lib/codemirror.js',
+        'mode/xml/xml.js',
+        'addon/edit/matchbrackets.js',
+        'addon/fold/xml-fold.js',
+        'mode/htmlembedded/htmlembedded.js',
+        'mode/htmlmixed/htmlmixed.js',
+        'mode/javascript/javascript.js',
+        'mode/css/css.js',
+        'mode/clike/clike.js',
+        'mode/php/php.js',
     ];
 
     public $css = [
         'lib/codemirror.css',
+        'theme/eclipse.css',
     ];
 
     public $jsOptions = [];
