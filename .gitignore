@@ -1,2 +1,6 @@
 .*
 !.gitignore
+Thumbs.db
+composer.phar
+composer.lock
+phpunit.xml
