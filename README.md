@@ -1,3 +1,8 @@
+WIP!!! 
+======
+Do not install - not ready yet
+------------------------------
+
 CodeMirror syntax highlighter integration in Yii2
 =================================================
 
