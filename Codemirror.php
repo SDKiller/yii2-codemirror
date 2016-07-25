@@ -36,6 +36,8 @@ class Codemirror extends InputWidget
     {
         parent::init();
 
+        Html::addCssClass($this->options, 'codemirror-textarea');
+
         $this->registerAssets();
     }
 
@@ -50,7 +52,7 @@ class Codemirror extends InputWidget
 
         $clientOptions = Json::encode($this->clientOptions);
 
-        $js = 'var editor = CodeMirror.fromTextArea(document.getElementById(\''. $this->options['id'] .'\'), ' . $clientOptions . ');';
+        $js = 'var editor_'. str_replace('-', '_', $this->options['id']) .' = CodeMirror.fromTextArea(document.getElementById(\''. $this->options['id'] .'\'), ' . $clientOptions . ');';
 
         $view->registerJs($js, View::POS_END);
     }

@@ -14,7 +14,6 @@ use yii\web\AssetBundle;
 
 class CodemirrorAsset extends AssetBundle
 {
-
     public $sourcePath = '@vendor/bower/codemirror';
 
     public $depends = [
@@ -23,6 +22,7 @@ class CodemirrorAsset extends AssetBundle
     public $js = [
         'lib/codemirror.js',
         'mode/xml/xml.js',
+        'addon/display/autorefresh.js',
         'addon/edit/matchbrackets.js',
         'addon/fold/xml-fold.js',
         'mode/htmlembedded/htmlembedded.js',
